@@ -67,7 +67,7 @@ while game_on:
     # Detect collision with food
     if snake.head.distance(food) < 15:
         food.create_new_food()
-        snake.extend(color=food_color)  # Pass the food color to the new segment
+        snake.extend()  # Remove the color parameter since it's not defined
         scoreboard.update_score()
     
     # Detect collision with wall
@@ -83,5 +83,4 @@ while game_on:
             game_on = False
             scoreboard.update_high_score()
             scoreboard.game_over()
-
 my_screen.exitonclick()
