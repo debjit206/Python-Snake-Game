@@ -27,9 +27,8 @@ class Snake:
         self.segments.append(timmy)
 
     def extend_snake(self):
-        length = len(self.segments)
-        last_segment = self.segments[length - 1]
-        self.add_segment(last_segment.position())
+        # Add a new segment to the snake
+        self.add_segment(self.segments[-1].position())
 
     def move(self):
         for i in range(len(self.segments) - 1, 0, -1):
